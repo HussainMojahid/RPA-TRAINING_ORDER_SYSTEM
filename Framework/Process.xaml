@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1159,5601</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1244,5369</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -122,21 +122,21 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="592,5536" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="546,5304" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="530,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="484,4923" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[in_ue_training_order_application]" OpenMode="Never" ScopeGuid="371c8251-73ea-4333-8472-20fbc07de94a" Version="V2">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="484,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="484,4925" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[in_ue_training_order_application]" OpenMode="Never" ScopeGuid="371c8251-73ea-4333-8472-20fbc07de94a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,4786" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,4788" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="str_order_refrence" />
               <Variable x:TypeArguments="x:String" Name="temp_product_code" />
@@ -181,7 +181,7 @@
                 </uix:TargetAnchorable>
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Type Into 'Number required''" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_6" Text="[in_TransactionItem.SpecificContent(&quot;Product Code&quot;).ToString]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Type Into 'Number required''" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_6" Text="[in_TransactionItem.SpecificContent(&quot;Number Required&quot;).ToString]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="84xZGPZI2EmsZ5XGIP2THg" CvElementArea="116, 69, 100, 20" CvType="InputBox" DesignTimeRectangle="117, 69, 100, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'WindowsForms10.EDIT.app…'" FullSelectorArgument="&lt;wnd ctrlname='txtNumberReq' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='txtNumberReq' /&gt;" Guid="4323c2d7-2aa9-423d-b472-9ba3a758b08e" InformativeScreenshot="85635e6124e48b3e0fd812a94ca5dfb3.png" IsResponsive="True" Reference="coLzYDJvcEaqSZnR7AVNqA/HOY2qHSui0alexQVTm6iVQ" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmAddOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -192,7 +192,7 @@
                 </uix:TargetAnchorable>
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Type Into 'Unit price''" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_7" Text="[in_TransactionItem.SpecificContent(&quot;Product Code&quot;).ToString]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Type Into 'Unit price''" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_7" Text="[in_TransactionItem.SpecificContent(&quot;Unit Price&quot;).ToString]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="mcPwS2PrAUmx9Bs2judlAg" CvElementArea="116, 107, 100, 21" CvType="InputBox" DesignTimeRectangle="117, 107, 100, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'WindowsForms10.EDIT.app…'" FullSelectorArgument="&lt;wnd ctrlname='txtUnitprice' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='txtUnitprice' /&gt;" Guid="45ad0d24-915a-46bb-b053-0a20208b70e9" InformativeScreenshot="cbd8ccb70783b626a731f611b5b3d64e.png" IsResponsive="True" Reference="coLzYDJvcEaqSZnR7AVNqA/9cbGcCBjuUqQEfPYkCAWfw" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmAddOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -203,7 +203,7 @@
                 </uix:TargetAnchorable>
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Type Into 'Cost centre''" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_8" Text="[in_TransactionItem.SpecificContent(&quot;Product Code&quot;).ToString]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Type Into 'Cost centre''" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_8" Text="[in_TransactionItem.SpecificContent(&quot;Cost Centre&quot;).ToString]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="zqvlbAlk50a4metKJreTAw" CvElementArea="116, 144, 100, 20" CvType="InputBox" DesignTimeRectangle="117, 144, 100, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'WindowsForms10.EDIT.app…'" FullSelectorArgument="&lt;wnd ctrlname='txtCostCentre' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='txtCostCentre' /&gt;" Guid="2a7f9ac1-d770-4e64-976c-a7144e89c004" InformativeScreenshot="af1952d341d727025c5cb30ff4de2b39.png" IsResponsive="True" Reference="coLzYDJvcEaqSZnR7AVNqA/0x3kxQVe9UiYKOtzQi1wPg" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmAddOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
