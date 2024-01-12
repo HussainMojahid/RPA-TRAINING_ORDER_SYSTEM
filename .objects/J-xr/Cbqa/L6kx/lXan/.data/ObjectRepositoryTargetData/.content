@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="TBPOeNWpWkKz4SbjEORwDA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CvElementArea="66, 105, 74, 22" CvTextArea="85, 110, 34, 13" CvTextArgument="Sign In" CvType="Button" DesignTimeRectangle="66, 105, 75, 23" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Sign In'" FullSelectorArgument="&lt;wnd ctrlname='Button1' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Button1' check:text='Sign In' /&gt;" Guid="592fd32e-cb21-42ab-bfae-a56dd6c9b23a" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmLogin' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CvElementArea="66, 105, 74, 22" CvType="Button" DesignTimeRectangle="66, 105, 74, 22" ElementType="Button" FriendlyName="'trainingordersystem.exe…'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="0d0d457fca1308f01fc223fe5a522e0a.png" xmlns="">0wjA9I674F0KhGvyVrxlH3w</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

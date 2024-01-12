@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="XRSAl-bYnkaem7CKDmY9fg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CvElementArea="90, 37, 100, 20" CvType="InputBox" DesignTimeRectangle="90, 38, 100, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Password'" FullSelectorArgument="&lt;wnd ctrlname='txtUsername' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='txtUsername' /&gt;" Guid="5921c783-d345-4200-80fb-ecec21666487" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmLogin' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CvTextArea="17, 44, 64, 12" CvTextArgument="Staff Number" CvType="Text" DesignTimeRectangle="15, 44, 69, 13" ElementType="Text" FriendlyName="'Staff Number'" FullSelectorArgument="&lt;wnd ctrlname='Label1' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label1' check:text='Staff Number' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="92f9b6d0468eaebfbccf800226b1c603.png" xmlns="">0uX1RfFvHh02uxqtdIrKTLA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

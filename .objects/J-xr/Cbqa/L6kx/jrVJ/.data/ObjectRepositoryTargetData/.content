@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="EOEGC_oQWE2Gijn_fG34Qw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CvElementArea="181, 136, 101, 25" CvTextArea="222, 142, 16, 11" CvTextArgument="Go" CvType="Button" DesignTimeRectangle="182, 137, 99, 23" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Go'" FullSelectorArgument="&lt;wnd ctrlname='Button2' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Button2' check:text='Go' /&gt;" Guid="028002e2-0cec-4f14-92d0-7d3d5a2f2a72" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmMenu' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="7a3bbe20ce48d3c29f4e3cc3b42cf51d.png" xmlns="">03YHPHTJdEk6_xcSGGeGPxQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

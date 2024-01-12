@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="zqvlbAlk50a4metKJreTAw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CvElementArea="116, 144, 100, 20" CvType="InputBox" DesignTimeRectangle="117, 144, 100, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'WindowsForms10.EDIT.app…'" FullSelectorArgument="&lt;wnd ctrlname='txtCostCentre' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='txtCostCentre' /&gt;" Guid="2a7f9ac1-d770-4e64-976c-a7144e89c004" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmAddOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CvTextArea="22, 152, 56, 11" CvTextArgument="Cost centre" CvType="Text" DesignTimeRectangle="21, 151, 61, 13" ElementType="Text" FriendlyName="'Cost centre'" FullSelectorArgument="&lt;wnd ctrlname='Label6' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label6' check:text='Cost centre' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="af1952d341d727025c5cb30ff4de2b39.png" xmlns="">0SCxaYWPnZUWRdtokPUySdg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

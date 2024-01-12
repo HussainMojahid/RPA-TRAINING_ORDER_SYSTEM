@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="LkKFLT2NuUGERqQukiUCPg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CvTextArea="94, 137, 20, 12" CvType="AnyWordGroup" DesignTimeRectangle="92, 137, 25, 13" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'125'" FullSelectorArgument="&lt;wnd ctrlname='lblOrdered' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='lblOrdered' /&gt;" Guid="99652175-b157-4f28-adfb-d864ade1ebc9" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmViewOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CvTextArea="17, 137, 64, 12" CvTextArgument="Units ordered" CvType="Text" DesignTimeRectangle="15, 137, 70, 13" ElementType="Text" FriendlyName="'Units ordered'" FullSelectorArgument="&lt;wnd ctrlname='Label4' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label4' check:text='Units ordered' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="28e2bc04bbcfadd9c9265081af449e88.png" xmlns="">02N6vEyjv9EGcpO6kHD29Gw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

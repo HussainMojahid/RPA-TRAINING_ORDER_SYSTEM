@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="B_JOznSJD0afMSff8p2quA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CvTextArea="93, 115, 40, 12" CvType="AnyWordGroup" DesignTimeRectangle="92, 115, 44, 13" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'BXR-19'" FullSelectorArgument="&lt;wnd ctrlname='lblProductCode' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='lblProductCode' /&gt;" Guid="710389bb-1d53-462d-8219-9c68467fe274" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmViewOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CvTextArea="17, 115, 65, 12" CvTextArgument="Product code" CvType="Text" DesignTimeRectangle="15, 115, 71, 13" ElementType="Text" FriendlyName="'Product code'" FullSelectorArgument="&lt;wnd ctrlname='Label2' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label2' check:text='Product code' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="d4e3589181911a24d0b4ef6c59ab04cf.png" xmlns="">0IyIAHWicvUugjdEzQRS3pw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

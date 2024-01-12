@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Ux51V0hjVUeRNkTLoDepZA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CvElementArea="97, 225, 72, 21" CvTextArea="102, 229, 62, 12" CvTextArgument="Submit order" CvType="Button" DesignTimeRectangle="96, 224, 75, 23" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Submit order'" FullSelectorArgument="&lt;wnd ctrlname='Button1' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Button1' check:text='Submit order' /&gt;" Guid="f56c2c01-76a3-47e2-b168-515eb28d9cd8" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmAddOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="2dcf615564d593bc233618e8f11d17e1.png" xmlns="">0jK-nUkCjYUOOtdMhgmgI4A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

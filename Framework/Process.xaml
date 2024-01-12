@@ -1,0 +1,441 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_ue_training_order_application" Type="InArgument(ui:UiElement)" />
+    <x:Property Name="in_dt_order_details" Type="InOutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1159,5601</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="50">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="80">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="592,5536" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="530,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="484,4923" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[in_ue_training_order_application]" OpenMode="Never" ScopeGuid="371c8251-73ea-4333-8472-20fbc07de94a" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,4786" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="str_order_refrence" />
+              <Variable x:TypeArguments="x:String" Name="temp_product_code" />
+              <Variable x:TypeArguments="x:String" Name="temp_unit_ordered" />
+              <Variable x:TypeArguments="x:String" Name="temp_unit_price" />
+              <Variable x:TypeArguments="x:String" Name="temp_total_price" />
+              <Variable x:TypeArguments="x:String" Name="temp_cost_center" />
+              <Variable x:TypeArguments="x:String" Name="temp_ordered_date" />
+              <Variable x:TypeArguments="x:String" Name="temp_orderer" />
+              <Variable x:TypeArguments="x:String" Name="result" />
+              <Variable x:TypeArguments="x:String" Name="str_training_order_path" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Type Into 'Option number''" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_12" Text="1" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="yayzlgh7eUCl54fb-UtB2Q" CvElementArea="101, 139, 64, 20" CvType="InputBox" DesignTimeRectangle="100, 139, 65, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Option number'" FullSelectorArgument="&lt;wnd ctrlname='txtOption' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='txtOption' /&gt;" Guid="7a86cc6c-fdf0-4ac0-9482-854218ead6d5" InformativeScreenshot="d9d443214d803f886aa378205e8b1256.png" IsResponsive="True" Reference="coLzYDJvcEaqSZnR7AVNqA/YdTuJxUcCkS9lg3_N0LK5A" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmMenu' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="16, 146, 75, 14" CvTextArgument="Option number:" CvType="Text" DesignTimeRectangle="15, 146, 79, 13" ElementType="Text" FriendlyName="'Option number'" FullSelectorArgument="&lt;wnd ctrlname='Label4' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label4' check:text='Option number:' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Click 'Go''" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="EOEGC_oQWE2Gijn_fG34Qw" CvElementArea="181, 136, 101, 25" CvTextArea="222, 142, 16, 11" CvTextArgument="Go" CvType="Button" DesignTimeRectangle="182, 137, 99, 23" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Go'" FullSelectorArgument="&lt;wnd ctrlname='Button2' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Button2' check:text='Go' /&gt;" Guid="028002e2-0cec-4f14-92d0-7d3d5a2f2a72" InformativeScreenshot="7a3bbe20ce48d3c29f4e3cc3b42cf51d.png" Reference="coLzYDJvcEaqSZnR7AVNqA/jrVJkqDMgkW_A8no_H9zgQ" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmMenu' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Type Into 'Product code''" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_5" Text="[in_TransactionItem.SpecificContent(&quot;Product Code&quot;).ToString]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="OoKirYUqHE-b01wqL-eBFA" CvElementArea="117, 35, 99, 20" CvType="InputBox" DesignTimeRectangle="117, 35, 100, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Product code'" FullSelectorArgument="&lt;wnd ctrlname='txtProductCode' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='txtProductCode' /&gt;" Guid="80800c93-0922-453b-8308-000b452c90e4" InformativeScreenshot="086eab3af297b335a2639eb22da615cd.png" IsResponsive="True" Reference="coLzYDJvcEaqSZnR7AVNqA/50GDHkV7RkCuk_o22ukNaA" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmAddOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="18, 42, 65, 12" CvTextArgument="Product code" CvType="Text" DesignTimeRectangle="16, 42, 71, 13" ElementType="Text" FriendlyName="'Product code'" FullSelectorArgument="&lt;wnd ctrlname='Label1' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label1' check:text='Product code' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Type Into 'Number required''" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_6" Text="[in_TransactionItem.SpecificContent(&quot;Product Code&quot;).ToString]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="84xZGPZI2EmsZ5XGIP2THg" CvElementArea="116, 69, 100, 20" CvType="InputBox" DesignTimeRectangle="117, 69, 100, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'WindowsForms10.EDIT.app…'" FullSelectorArgument="&lt;wnd ctrlname='txtNumberReq' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='txtNumberReq' /&gt;" Guid="4323c2d7-2aa9-423d-b472-9ba3a758b08e" InformativeScreenshot="85635e6124e48b3e0fd812a94ca5dfb3.png" IsResponsive="True" Reference="coLzYDJvcEaqSZnR7AVNqA/HOY2qHSui0alexQVTm6iVQ" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmAddOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="18, 76, 79, 14" CvTextArgument="Number required" CvType="Text" DesignTimeRectangle="16, 76, 85, 13" ElementType="Text" FriendlyName="'Number required'" FullSelectorArgument="&lt;wnd ctrlname='Label5' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label5' check:text='Number required' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Type Into 'Unit price''" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_7" Text="[in_TransactionItem.SpecificContent(&quot;Product Code&quot;).ToString]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="mcPwS2PrAUmx9Bs2judlAg" CvElementArea="116, 107, 100, 21" CvType="InputBox" DesignTimeRectangle="117, 107, 100, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'WindowsForms10.EDIT.app…'" FullSelectorArgument="&lt;wnd ctrlname='txtUnitprice' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='txtUnitprice' /&gt;" Guid="45ad0d24-915a-46bb-b053-0a20208b70e9" InformativeScreenshot="cbd8ccb70783b626a731f611b5b3d64e.png" IsResponsive="True" Reference="coLzYDJvcEaqSZnR7AVNqA/9cbGcCBjuUqQEfPYkCAWfw" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmAddOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="23, 114, 46, 14" CvTextArgument="Unit price" CvType="Text" DesignTimeRectangle="21, 114, 52, 13" ElementType="Text" FriendlyName="'Unit price'" FullSelectorArgument="&lt;wnd ctrlname='Label7' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label7' check:text='Unit price' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Type Into 'Cost centre''" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_8" Text="[in_TransactionItem.SpecificContent(&quot;Product Code&quot;).ToString]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="zqvlbAlk50a4metKJreTAw" CvElementArea="116, 144, 100, 20" CvType="InputBox" DesignTimeRectangle="117, 144, 100, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'WindowsForms10.EDIT.app…'" FullSelectorArgument="&lt;wnd ctrlname='txtCostCentre' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='txtCostCentre' /&gt;" Guid="2a7f9ac1-d770-4e64-976c-a7144e89c004" InformativeScreenshot="af1952d341d727025c5cb30ff4de2b39.png" IsResponsive="True" Reference="coLzYDJvcEaqSZnR7AVNqA/0x3kxQVe9UiYKOtzQi1wPg" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmAddOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="22, 152, 56, 11" CvTextArgument="Cost centre" CvType="Text" DesignTimeRectangle="21, 151, 61, 13" ElementType="Text" FriendlyName="'Cost centre'" FullSelectorArgument="&lt;wnd ctrlname='Label6' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label6' check:text='Cost centre' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Click 'Submit order''" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="Ux51V0hjVUeRNkTLoDepZA" CvElementArea="97, 225, 72, 21" CvTextArea="102, 229, 62, 12" CvTextArgument="Submit order" CvType="Button" DesignTimeRectangle="96, 224, 75, 23" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Submit order'" FullSelectorArgument="&lt;wnd ctrlname='Button1' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Button1' check:text='Submit order' /&gt;" Guid="f56c2c01-76a3-47e2-b168-515eb28d9cd8" InformativeScreenshot="2dcf615564d593bc233618e8f11d17e1.png" Reference="coLzYDJvcEaqSZnR7AVNqA/0zEru-bdzESkxAQnJ9NUWg" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmAddOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NGetText DisplayName="Get Text 'Get Text 'Please take''" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_1" TextString="[str_order_refrence]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="RoF6lO7Dqk2fn_rwJwuHGQ" CvTextArea="29, 60, 216, 12" CvType="AnyWordGroup" DesignTimeRectangle="27, 60, 221, 13" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Please take'" FullSelectorArgument="&lt;wnd ctrlname='Label1' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label1' /&gt;" Guid="b54391aa-5c8b-4a7f-bf8a-2daf829e9543" InformativeScreenshot="3590ee81c0bf8a44150407269fc2ed79.png" Reference="coLzYDJvcEaqSZnR7AVNqA/XgZH2t_tHUa-rrnMRnpsUg" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmOrderConfirmation' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Click 'Continue''" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="6rbK7iwUaECAcDdV_0tJ5g" CvElementArea="109, 116, 72, 20" CvTextArea="121, 120, 44, 12" CvTextArgument="Continue" CvType="Button" DesignTimeRectangle="107, 115, 75, 23" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Continue'" FullSelectorArgument="&lt;wnd ctrlname='Button1' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Button1' check:text='Continue' /&gt;" Guid="1c47a699-504c-420a-9404-80d1a0936b6e" InformativeScreenshot="75f40ea935d20861e6d1d97f70a4836f.png" Reference="coLzYDJvcEaqSZnR7AVNqA/IoKxQBCR_UufprI5K4jZow" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmOrderConfirmation' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvElementArea="109, 116, 72, 20" CvType="Button" DesignTimeRectangle="109, 116, 72, 20" ElementType="Button" FriendlyName="'trainingordersystem.exe…'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Type Into 'Option number''" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_10" Text="2" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="yayzlgh7eUCl54fb-UtB2Q" CvElementArea="101, 139, 64, 20" CvType="InputBox" DesignTimeRectangle="100, 139, 65, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Option number'" FullSelectorArgument="&lt;wnd ctrlname='txtOption' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='txtOption' /&gt;" Guid="7a86cc6c-fdf0-4ac0-9482-854218ead6d5" InformativeScreenshot="d9d443214d803f886aa378205e8b1256.png" IsResponsive="True" Reference="coLzYDJvcEaqSZnR7AVNqA/YdTuJxUcCkS9lg3_N0LK5A" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmMenu' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="16, 146, 75, 14" CvTextArgument="Option number:" CvType="Text" DesignTimeRectangle="15, 146, 79, 13" ElementType="Text" FriendlyName="'Option number'" FullSelectorArgument="&lt;wnd ctrlname='Label4' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label4' check:text='Option number:' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Click 'Go2''" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="IF2Yr2UyXEGT3bC42JC-Sw" CvElementArea="181, 136, 101, 25" CvTextArea="222, 142, 16, 11" CvTextArgument="Go" CvType="Button" DesignTimeRectangle="182, 137, 99, 23" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Go'" FullSelectorArgument="&lt;wnd ctrlname='Button2' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Button2' check:text='Go' /&gt;" Guid="83b0ca89-07c7-474e-bc1c-c58a779a8181" InformativeScreenshot="c0eade0fe6c2a7c47dcb8976c4b3947c.png" Reference="coLzYDJvcEaqSZnR7AVNqA/37TpGgynLESoGOTALR5oJw" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmMenu' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Type Into 'Order number''" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_11" Text="[str_order_refrence.Split(&quot;:&quot;)(1)]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="gRxmEdOaLEatIolJw5femg" CvElementArea="92, 42, 114, 20" CvType="InputBox" DesignTimeRectangle="92, 43, 114, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Order number'" FullSelectorArgument="&lt;wnd ctrlname='txtOrderRef' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='txtOrderRef' /&gt;" Guid="6d7516ef-c372-486f-a195-b046c29c0949" InformativeScreenshot="8d637cc002471939eddfb377e710053f.png" IsResponsive="True" Reference="coLzYDJvcEaqSZnR7AVNqA/wMRaT2jROEadZrxNSBClMQ" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmViewOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="16, 51, 67, 11" CvTextArgument="Order number" CvType="Text" DesignTimeRectangle="15, 50, 71, 13" ElementType="Text" FriendlyName="'Order number'" FullSelectorArgument="&lt;wnd ctrlname='Label1' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label1' check:text='Order number' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Click 'Retrieve Order''" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="371c8251-73ea-4333-8472-20fbc07de94a" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="xFMqOGchDU-XgRucX9tPtg" CvElementArea="18, 70, 187, 21" CvTextArea="76, 74, 71, 12" CvTextArgument="Retrieve Order" CvType="Button" DesignTimeRectangle="18, 69, 188, 23" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Click 'Retrieve Order''" FullSelectorArgument="&lt;wnd ctrlname='Button1' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Button1' check:text='Retrieve Order' /&gt;" Guid="92272369-8c49-4d60-9304-fde9ba205406" InformativeScreenshot="484df5eb22f8096771978b008ebd00f9.png" Reference="YDwBsIZkrkG1xjZlZHOaDw/o-z8K_q07E6BrKtLhGUDNg" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmViewOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NGetText DisplayName="Get Text 'Product code'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="371c8251-73ea-4333-8472-20fbc07de94a" TextString="[temp_product_code]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="B_JOznSJD0afMSff8p2quA" CvTextArea="93, 115, 40, 12" CvType="AnyWordGroup" DesignTimeRectangle="92, 115, 44, 13" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Get Text 'Product code''" FullSelectorArgument="&lt;wnd ctrlname='lblProductCode' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='lblProductCode' /&gt;" Guid="710389bb-1d53-462d-8219-9c68467fe274" InformativeScreenshot="d4e3589181911a24d0b4ef6c59ab04cf.png" Reference="YDwBsIZkrkG1xjZlZHOaDw/Crxo2sue90uYpgBBRMnQdQ" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmViewOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="17, 115, 65, 12" CvTextArgument="Product code" CvType="Text" DesignTimeRectangle="15, 115, 71, 13" ElementType="Text" FriendlyName="'Get Text 'Product code''" FullSelectorArgument="&lt;wnd ctrlname='Label2' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label2' check:text='Product code' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Units ordered'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="371c8251-73ea-4333-8472-20fbc07de94a" TextString="[temp_unit_ordered]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="LkKFLT2NuUGERqQukiUCPg" CvTextArea="94, 137, 20, 12" CvType="AnyWordGroup" DesignTimeRectangle="92, 137, 25, 13" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Get Text 'Units ordered''" FullSelectorArgument="&lt;wnd ctrlname='lblOrdered' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='lblOrdered' /&gt;" Guid="99652175-b157-4f28-adfb-d864ade1ebc9" InformativeScreenshot="28e2bc04bbcfadd9c9265081af449e88.png" Reference="YDwBsIZkrkG1xjZlZHOaDw/4CnYgw2PKkS2bpk8BG7M2A" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmViewOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="17, 137, 64, 12" CvTextArgument="Units ordered" CvType="Text" DesignTimeRectangle="15, 137, 70, 13" ElementType="Text" FriendlyName="'Get Text 'Units ordered''" FullSelectorArgument="&lt;wnd ctrlname='Label4' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label4' check:text='Units ordered' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Unit price'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="371c8251-73ea-4333-8472-20fbc07de94a" TextString="[temp_unit_price]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="TujuvMByFUmaPXHsW6VoJg" CvTextArea="93, 161, 24, 12" CvType="AnyWordGroup" DesignTimeRectangle="92, 161, 28, 13" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Get Text 'Unit price''" FullSelectorArgument="&lt;wnd ctrlname='lblUnitPrice' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='lblUnitPrice' /&gt;" Guid="12bbade7-05c8-4764-97e6-473268ee7f79" InformativeScreenshot="cded15a3fe8f6e7d30d44cb8b911922b.png" Reference="YDwBsIZkrkG1xjZlZHOaDw/QdO7d6urDEiGwmaNOLqEJg" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmViewOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="18, 161, 45, 14" CvTextArgument="Unit price" CvType="Text" DesignTimeRectangle="15, 161, 52, 13" ElementType="Text" FriendlyName="'Get Text 'Unit price''" FullSelectorArgument="&lt;wnd ctrlname='Label6' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label6' check:text='Unit price' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Total price'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="371c8251-73ea-4333-8472-20fbc07de94a" TextString="[temp_total_price]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="S81k5qUAUUex_LHexqhoUQ" CvTextArea="94, 184, 35, 12" CvType="AnyWordGroup" DesignTimeRectangle="92, 184, 40, 13" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Get Text 'Total price''" FullSelectorArgument="&lt;wnd ctrlname='lblTotalPrice' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='lblTotalPrice' /&gt;" Guid="4a1b285c-25b7-4029-ba72-1b015ced231c" InformativeScreenshot="08a534571864303c2f47ce8713d39644.png" Reference="YDwBsIZkrkG1xjZlZHOaDw/eYGqRiwtLkOgc5lB0SmgpQ" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmViewOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="17, 184, 51, 13" CvTextArgument="Total price" CvType="Text" DesignTimeRectangle="15, 184, 57, 13" ElementType="Text" FriendlyName="'Get Text 'Total price''" FullSelectorArgument="&lt;wnd ctrlname='Label8' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label8' check:text='Total price' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Cost centre'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="371c8251-73ea-4333-8472-20fbc07de94a" TextString="[temp_cost_center]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="x5fSJiTmn0SGX9QesxDjiw" CvTextArea="94, 210, 28, 11" CvType="AnyWordGroup" DesignTimeRectangle="92, 210, 34, 13" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Get Text 'Cost centre''" FullSelectorArgument="&lt;wnd ctrlname='lblCostCentre' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='lblCostCentre' /&gt;" Guid="c5c74e57-fd65-4a6d-bf1c-b49351bced8e" InformativeScreenshot="a99942ea296669bb640ae0927901ea61.png" Reference="YDwBsIZkrkG1xjZlZHOaDw/kq7rj9Xo9UqX_Rxdat4p8g" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmViewOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="16, 210, 56, 12" CvTextArgument="Cost centre" CvType="Text" DesignTimeRectangle="15, 210, 61, 13" ElementType="Text" FriendlyName="'Get Text 'Cost centre''" FullSelectorArgument="&lt;wnd ctrlname='Label10' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label10' check:text='Cost centre' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Date ordered'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="371c8251-73ea-4333-8472-20fbc07de94a" TextString="[temp_ordered_date]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="Y6wsnMheYEGVEEvdyilYPA" CvTextArea="93, 235, 57, 12" CvType="AnyWordGroup" DesignTimeRectangle="92, 235, 61, 13" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Get Text 'Date ordered''" FullSelectorArgument="&lt;wnd ctrlname='lblDateOrdered' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='lblDateOrdered' /&gt;" Guid="e2468f11-ed36-46a4-ba62-5c7a95c48dd8" InformativeScreenshot="655ed94172173ed96426f8a91f7c8b1d.png" Reference="YDwBsIZkrkG1xjZlZHOaDw/PQnoOljLTk6TozQQvCa9Lg" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmViewOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="17, 235, 63, 12" CvTextArgument="Date ordered" CvType="Text" DesignTimeRectangle="15, 235, 69, 13" ElementType="Text" FriendlyName="'Get Text 'Date ordered''" FullSelectorArgument="&lt;wnd ctrlname='Label12' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label12' check:text='Date ordered' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Orderer'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="371c8251-73ea-4333-8472-20fbc07de94a" TextString="[temp_orderer]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="g0BZMqSyTEu9-u9NLTzgoA" CvTextArea="94, 257, 15, 12" CvType="AnyWordGroup" DesignTimeRectangle="92, 257, 21, 13" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Get Text 'Orderer''" FullSelectorArgument="&lt;wnd ctrlname='lblOrderer' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='lblOrderer' /&gt;" Guid="1a356761-8f6d-4ece-b8c2-e98698643d90" InformativeScreenshot="0edc09cc373df4f87901f53bdfc7dd44.png" Reference="YDwBsIZkrkG1xjZlZHOaDw/pgLOslj2u0i7ATlYySCCzg" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmViewOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="16, 257, 38, 12" CvTextArgument="Orderer" CvType="Text" DesignTimeRectangle="15, 257, 42, 13" ElementType="Text" FriendlyName="'Get Text 'Orderer''" FullSelectorArgument="&lt;wnd ctrlname='Label14' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label14' check:text='Orderer' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{temp_product_code,temp_unit_ordered,temp_unit_price,temp_total_price,temp_cost_center,temp_ordered_date,temp_orderer}]" DataTable="[in_dt_order_details]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="388,186" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:AddDataRow>
+            <ui:OutputDataTable DataTable="[in_dt_order_details]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="388,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[result]" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

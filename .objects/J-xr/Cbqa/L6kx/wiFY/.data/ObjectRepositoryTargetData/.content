@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="txvwN3NLdEa1VxjIUwiHnA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CvElementArea="89, 73, 100, 20" CvType="InputBox" DesignTimeRectangle="90, 73, 100, 20" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'WindowsForms10.EDIT.app…'" FullSelectorArgument="&lt;wnd ctrlname='txtPassword' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='txtPassword' /&gt;" Guid="e3ffdd8e-9aa8-487e-b294-5eec78bdc020" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmLogin' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CvTextArea="17, 80, 47, 12" CvTextArgument="Password" CvType="Text" DesignTimeRectangle="15, 80, 53, 13" ElementType="Text" FriendlyName="'Password'" FullSelectorArgument="&lt;wnd ctrlname='Label2' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label2' check:text='Password' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="452095eec2fa23f42f2cc66620081af9.png" xmlns="">03jgXZ522OESCuqTH0e16Kw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="RoF6lO7Dqk2fn_rwJwuHGQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CvTextArea="29, 60, 216, 12" CvType="AnyWordGroup" DesignTimeRectangle="27, 60, 221, 13" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Please take'" FullSelectorArgument="&lt;wnd ctrlname='Label1' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label1' /&gt;" Guid="b54391aa-5c8b-4a7f-bf8a-2daf829e9543" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmOrderConfirmation' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="3590ee81c0bf8a44150407269fc2ed79.png" xmlns="">0qbV9jKfqbU2SHYYRB1solw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

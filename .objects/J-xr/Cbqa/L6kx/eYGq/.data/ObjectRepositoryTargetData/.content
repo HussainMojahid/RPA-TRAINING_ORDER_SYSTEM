@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="S81k5qUAUUex_LHexqhoUQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CvTextArea="94, 184, 35, 12" CvType="AnyWordGroup" DesignTimeRectangle="92, 184, 40, 13" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'6162.5'" FullSelectorArgument="&lt;wnd ctrlname='lblTotalPrice' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='lblTotalPrice' /&gt;" Guid="4a1b285c-25b7-4029-ba72-1b015ced231c" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmViewOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CvTextArea="17, 184, 51, 13" CvTextArgument="Total price" CvType="Text" DesignTimeRectangle="15, 184, 57, 13" ElementType="Text" FriendlyName="'Total price'" FullSelectorArgument="&lt;wnd ctrlname='Label8' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label8' check:text='Total price' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="08a534571864303c2f47ce8713d39644.png" xmlns="">03kogO1_U6EOleV70W62AMQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

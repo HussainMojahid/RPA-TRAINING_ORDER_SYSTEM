@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="gRxmEdOaLEatIolJw5femg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CvElementArea="92, 42, 114, 20" CvType="InputBox" DesignTimeRectangle="92, 43, 114, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Order number'" FullSelectorArgument="&lt;wnd ctrlname='txtOrderRef' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='txtOrderRef' /&gt;" Guid="6d7516ef-c372-486f-a195-b046c29c0949" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='trainingordersystem.exe' ctrlname='frmViewOrder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CvTextArea="16, 51, 67, 11" CvTextArgument="Order number" CvType="Text" DesignTimeRectangle="15, 50, 71, 13" ElementType="Text" FriendlyName="'Order number'" FullSelectorArgument="&lt;wnd ctrlname='Label1' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='Label1' check:text='Order number' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="8d637cc002471939eddfb377e710053f.png" xmlns="">0l8su6ubZ9kOMcKktNamlJw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
